@@ -19,7 +19,7 @@
 \usepackage[table]{xcolor}
 \usepackage{amsfonts,graphicx,amsmath,hyperref}
 \title{Habib University\\CS-113 Discrete Mathematics\\Spring 2018\\HW 2}
-\author{$<your ID>$}  % replace with your ID, e.g. oy02945
+\author{$as03505$}  % replace with your ID, e.g. oy02945
 \date{Due: 19h, 16th February, 2018}
 
 
@@ -47,13 +47,22 @@
   \end{center}
 
   \begin{solution}
-    % Write your solution here
-  \end{solution}
+    \newline
+    i) For the function to be partial: \newline
+    domain = all real numbers $\mathbb{R}$ \newline
+    codomain = all real numbers $\mathbb{R}$ \newline
+    range (set of values) = non-negative real numbers $\mathbb{R^+}$ \newline
+    ii) For the function to be total: \newline
+    domain = all real numbers $\mathbb{R}$ \newline
+    codomain = all complex numbers $\mathbb{C}$ \newline
+    range (set of values) = positive complex numbers $\mathbb{C^+}$
+    \end{solution}
   
   \part[5] Explain whether $f$ is a function from the set of all bit strings to the set of integers if $f(S)$ is the smallest $i \in \mathbb{Z}$� such that the $i$th bit of S is 1 and $f(S) = 0$ when S is the empty string. 
   
   \begin{solution}
-    % Write your solution here
+    This definition does not tell what to do with a nonempty string consisting of all 0's. Thus, for example,
+f(000) is undefined. Therefore this is not a function.
   \end{solution}
 
   \part[15] For $X,Y \in S$, explain why (or why not) the following define an equivalence relation on $S$:
@@ -64,7 +73,16 @@
   \end{subparts}
 
   \begin{solution}
-    % Write your solution here
+    \newline
+    i) $S = \{(X,Y)|$ $X$ and $Y$ have been in class together\} \newline
+    This relation is not an equivalence relation as it is not transitive because if X has been in class with Y and Y has been in class with Z,  it is not necessary that X has been in class with Z. \newline
+    ii) $S = \{(X,Y)|$ $X$ and $Y$ rhyme\} \newline
+    This relation is an equivalence relation because it is reflexive (X rhymes with X and Y rhymes with Y), symmetric (if X rhymes with Y then Y rhymes with X) and transitive (if X rhymes with Y and Y rhymes with Z, then X rhymes with Z). \newline
+    iii) $S = \{(X,Y)|$ $X$ is a subset of $Y$ \} \newline
+    *Supposing X is an improper subset of Y* \newline
+    This relation is an equivalence relation because it is reflexive (X is a subset of X and Y is a subset of Y), symmetric (if X is a subset of Y then Y is a subset of X) and transitive (if X is a subset of Y and Y is a subset of Z, then X is a subset of Z) \newline
+    *Supposing X is an proper subset of Y* \newline
+    This relation is not an equivalence relation because it is not reflexive(X is not a subset of X), neither is it symmetric(if X is a subset of Y then it is not necessary that Y is a subset of X) nor is it transitive(if X is a subset of Y and Y is a subset of Z, then X is not a subset of Z). \newline
   \end{solution}
 
 \end{parts}
@@ -72,7 +90,16 @@
 %Long questions (75)
 \question[15] Let $A = f^{-1}(B)$. Prove that $f(A) \subseteq B$.
   \begin{solution}
-    % Write your solution here
+    \newline
+    A and B are sets, where a $\in$ A and b $\in$ B. Assuming the function $f$ is bijective. \newline
+    \begin{center}
+        If $f(A) = f^{-1}(B)$ \newline
+        then a $\in$ $f^{-1}(B)$ \newline
+        Iff $f$ is bijective \newline
+        then b $\in$ $f(f^{-1}(B))$ \newline
+        b $\in$ $f(A)$ \newline
+        Thus, $f(A) \subseteq B$ \newline
+    \end{center}
   \end{solution}
 
 \question[15] Consider $[n] = \{1,2,3,...,n\}$ where $n \in \mathbb{N}$. Let $A$ be the set of subsets of $[n]$ that have even size, and let $B$ be the set of subsets of $[n]$ that have odd size. Establish a bijection from $A$ to $B$, thereby proving $|A| = |B|$. (Such a bijection is suggested below for $n = 3$) 
@@ -87,7 +114,21 @@
 \end{center}
 
   \begin{solution}
-    % Write your solution here
+   $f : \{X \subseteq \{1,..., n\}$ : $|X|$ is even\} $\rightarrow$  $\{X \subseteq \{1, ..., n\}$ : $|X|$ is odd$\}$ \newline
+    Proof that it is a bijection: \newline
+    (Whether 1 $\in$ X or 1 not $\in $ X) \newline
+    f $|X|$ = n, then $|f(X)|$ = n + 1 or $|f(X)|$ = n - 1 \newline
+    So, $f$ maps even subsets onto odd subsets and for that $f$ must be both surjective and injective. \newline
+    To prove the $f$ is injective, let A and B be two subsets, \newline 
+    Suppose that a $\in$ A / B . If  a $\neq$ 1, then \newline
+    a $\in$ f(A) / f(B), so f(A) $\neq$ f(B) \newline
+    Therefore,\newline 
+    f(A) $\neq$ f(B ), so f is injective.\newline
+    f(f^{-1}(B)) = B   \newline
+    B $\subseteq$ $\{1, . . . , n\}$ with $|B |$ odd, we can take A = f(B) to see that there is some A such that f(A) = B .  \newline
+    We have shown that f is injective and surjective, so f is a bijection   \newline
+    Thus proved that, \newline
+    $|A|=|B|$
   \end{solution}
   
 \question Mushrooms play a vital role in the biosphere of our planet. They also have recreational uses, such as in understanding the mathematical series below. A mushroom number, $M_n$, is a figurate number that can be represented in the form of a mushroom shaped grid of points, such that the number of points is the mushroom number. A mushroom consists of a stem and cap, while its height is the combined height of the two parts. Here is $M_5=23$:
@@ -120,11 +161,28 @@ Study the first five mushrooms carefully and make sure you can draw subsequent o
   \begin{parts}
     \part[15] Derive a closed-form for $M_n$ in terms of $n$.
   \begin{solution}
-    % Write your solution here
+    Dots in Stem height: 
+    \begin{center}
+        2(n-1)
+    \end{center} 
+    Dots in Cap width:
+    \begin{center}
+        (n+1)
+    \end{center}
+    Dots in Cap Height:
+    \begin{center}
+        $\lfloor{n}/{2} \rfloor +1-{\lfloor{n}/{2}\rfloor[(\lfloor{n}/{2}\rfloor+1)}]/{2}$
+    \end{center}
+    
+    $M_n = (n+1)(\lfloor{n}/{2}\rfloor+1-{\lfloor{n}/{2}\rfloor[(\lfloor{n}/{2}\rfloor+1)}/{2})]+2(n-1)$
+    
+    
   \end{solution}
     \part[5] What is the total height of the $20$th mushroom in the series? 
   \begin{solution}
-    % Write your solution here
+    Stem Height = (n-1) = 19 \newline
+    Cap Height = $\lfloor{20}/{2} \rfloor +1-\dfrac{\lfloor{20}/{2}\rfloor(\lfloor{20}/{2}\rfloor+1)}{2}$ = 11 \newline
+    Total Height = 19 + 11 = 30
   \end{solution}
 \end{parts}
 
@@ -153,11 +211,26 @@ The \href{http://www.maths.surrey.ac.uk/hosted-sites/R.Knott/Fibonacci/fibGen.ht
  
     \begin{solution}
     % Write your solution here
+    A countable set is a set with the same cardinality (number of elements) as some subset of the set of natural numbers. \\
+    F(n)= F(n-1) + F(n-2), where  $n \in \mathbb{N}$ \\
+        Let F(n)={1,1,2,3,...,n}, so  $F(n) \in \mathbb{N}$\\
+        (n-1) $\epsilon$ F(n)\\
+        (n-2) $\epsilon$ F(n) \\
+        ((n-1),(n-2))  $F(n) \in \mathbb{N}$ \\
+        Every element of fibonacci series is a distinct element of the set of Natural numbers.\\
+        Every element of Fibonacci series is an element of the set of Natural Numbers.\\
+        Hence Fibonacci series is bijective to the set of Natural Numbers.\\
+    Therefore, Fibonacci sequence is countable.\\
   \end{solution}
   \part[15] Consider the Modified Wythoff as any array derived from the original, where each entry of the leading diagonal (marked in blue) of the original 2D-Array is replaced with an integer that does not occur in that row. Prove that the Wythoff Array is countable. 
 
   \begin{solution}
     % Write your solution here
+    If we change the first diagonal, the first element of the first row (i.e, 1) would change.\\
+    Since the second sequence(second row) is dependent on the first element of the first row( 1st element of Sequence2 = 1st element of sequence1 * Golden Ratio)\\
+    Therefore, the sequence would change but it would be another integer sequence which would be a part of the set of Natural numbers.\\
+    Therefore, it would still be bijective to the set of natural numbers.\\
+    Hence it would sill be countable.
   \end{solution}
 \end{parts}
 
